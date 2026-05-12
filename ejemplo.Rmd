@@ -28,3 +28,27 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Visualización de archivos de `starwars` proveniente del paquete `dplyr`
+
+Cargar paquete de `dplyr` para habilitar archivo
+
+```{r}
+library(tidyverse)
+head(starwars)
+```
+Visualización grafica sobre la altura y la masa
+
+```{r}
+# Gráfico de dispersión
+ggplot(starwars, aes(x = height, y = mass)) +
+  geom_point(color = "steelblue", size = 3) +
+  labs(
+    title = "Relación entre altura y masa de los personajes de Star Wars",
+    x = "Altura (cm)",
+    y = "Masa (kg)"
+  ) +
+  theme_minimal()
+```
+
+
